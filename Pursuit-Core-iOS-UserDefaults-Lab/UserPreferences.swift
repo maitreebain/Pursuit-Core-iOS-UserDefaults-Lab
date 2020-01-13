@@ -51,13 +51,21 @@ class UserPreference {
         
         switch month {
         case .january(1):
-            if day < 19 && day > 0 {
+            if day <= 20 && day > 0 {
                 return Zodiac.capricorn
             } else if day <= 31 {
-                return Zodiac.pisces
+                return Zodiac.aquarius
             }
         case .february(2):
-            if day < 
+            if day <= 19 && day > 0 {
+                return Zodiac.aquarius
+            } else if day <= 29 {
+                return Zodiac.pisces
+            }
+        case .march(3):
+            if day <= 20 && day > 0 {
+                
+            }
         }
         
     }
