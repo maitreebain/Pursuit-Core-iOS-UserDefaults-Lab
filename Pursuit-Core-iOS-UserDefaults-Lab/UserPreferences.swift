@@ -64,11 +64,17 @@ class UserPreference {
             }
         case .march(3):
             if day <= 20 && day > 0 {
+                return Zodiac.pisces
+            } else if day <= 31 {
+                return Zodiac.aries
+            }
+        case .april(4):
+            if day <= 20 && day > 0 {
                 return Zodiac.aries
             } else if day <= 30 {
                 return Zodiac.taurus
             }
-        case .april(4):
+        case .may(5):
             if day 
         }
         
