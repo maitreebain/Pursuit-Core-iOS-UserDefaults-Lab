@@ -17,23 +17,25 @@ enum Zodiac: String {
     case virgo = "Virgo"
     case libra = "Libra"
     case scorpio = "Scorpio"
+    case sagittarius = "Sagittarius"
+    case capricorn = "Capricorn"
     case aquarius = "Aquarius"
     case pisces = "Pisces"
 }
 
-enum ZodiacMonths: String {
-    case january = "January"
-    case february = "February"
-    case march = "March"
-    case april = "April"
-    case may = "May"
-    case june = "June"
-    case july = "July"
-    case august = "August"
-    case september = "September"
-    case october = "October"
-    case november = "November"
-    case december = "December"
+enum ZodiacMonths{
+    case january(Int)
+    case february(Int)
+    case march(Int)
+    case april(Int)
+    case may(Int)
+    case june(Int)
+    case july(Int)
+    case august(Int)
+    case september(Int)
+    case october(Int)
+    case november(Int)
+    case december(Int)
 }
 
 
@@ -45,7 +47,18 @@ class UserPreference {
     
     static let shared = UserPreference()
     
-    func updateZodiacMonth(for month: ZodiacMonths, for day: Int) {
+    func updateZodiacMonth(for month: ZodiacMonths, for day: Int) -> Zodiac {
+        
+        switch month {
+        case .january(1):
+            if day < 19 && day > 0 {
+                return Zodiac.capricorn
+            } else if day <= 31 {
+                return Zodiac.pisces
+            }
+        case .february(2):
+            if day < 
+        }
         
     }
     

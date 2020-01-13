@@ -14,7 +14,7 @@ class ZodiacViewController: UIViewController {
     
     @IBOutlet weak var birthdayText: UITextField!
     
-    var zodiac = [ZodiacData]()
+    var zodiac: ZodiacData?
     
     var currentName = "" {
         didSet{
@@ -22,19 +22,10 @@ class ZodiacViewController: UIViewController {
         }
     }
     
-    
-    
-    
     var currentBday = "" {
         didSet{
             birthdayText.text = currentBday
             
-            switch ZodiacMonths{
-            case .january:
-                print("djnh")
-            default:
-                break
-            }
         }
     }
     
