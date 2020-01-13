@@ -43,5 +43,11 @@ class UserPreference {
         
     }
     
+    static let shared = UserPreference()
+    
+    func updateZodiacMonth(for month: ZodiacMonths, for day: Int) {
+        
+    }
+    
 }
 
