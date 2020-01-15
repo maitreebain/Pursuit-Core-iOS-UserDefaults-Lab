@@ -23,6 +23,10 @@ enum Zodiac: String {
     case pisces = "Pisces"
 }
 
+struct UserPreferenceKey {
+    static let horoscope = "Zodiac Sign"
+}
+
 class UserPreference {
     
     private init() {
@@ -31,8 +35,17 @@ class UserPreference {
     
     static let shared = UserPreference()
     
-    func updateZodiacMonth(for month: ZodiacMonths, for day: Int) -> Zodiac {
+    func updateZodiac(for userSign: Zodiac.RawValue){
+        UserDefaults.standard.set(userSign, forKey: UserPreferenceKey.horoscope)
+    }
     
+    func getZodiac() -> Zodiac.RawValue? {
+        guard let zodiacSign = UserDefaults.standard.object(forKey: UserPreferenceKey.horoscope) as? String else {
+            return nil
+        }
+        
+        
+        return Zodiac(rawValue: zodiacSign).map { $0.rawValue }
     }
 }
 

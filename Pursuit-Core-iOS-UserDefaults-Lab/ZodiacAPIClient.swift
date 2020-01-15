@@ -10,7 +10,7 @@ import Foundation
 import NetworkHelper
 
 struct ZodiacAPIClient {
-    static func getSign(for sign: String, completion: @escaping (Result<[ZodiacData],AppError>) -> ()) {
+    static func getSign(for sign: String, completion: @escaping (Result<ZodiacData,AppError>) -> ()) {
         
         let endpointURL = "http://sandipbgt.com/theastrologer/api/horoscope/\(sign)/today"
         
@@ -28,7 +28,7 @@ struct ZodiacAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let horoscopeData = try JSONDecoder().decode([ZodiacData].self, from: data)
+                    let horoscopeData = try JSONDecoder().decode(ZodiacData.self, from: data)
                     
                     completion(.success(horoscopeData))
                 }

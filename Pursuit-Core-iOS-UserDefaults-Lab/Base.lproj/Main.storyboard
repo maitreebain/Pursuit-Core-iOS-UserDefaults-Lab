@@ -26,41 +26,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your birthday here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-0k-eG7">
-                                <rect key="frame" x="20" y="391" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your Zodiac Sign" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-0k-eG7">
+                                <rect key="frame" x="20" y="391" width="374" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter your birthday here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-U2-lYY">
-                                <rect key="frame" x="20" y="432" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-J9-8av">
+                                <rect key="frame" x="0.0" y="433" width="414" height="216"/>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17o-M2-XCu">
-                                <rect key="frame" x="184" y="331" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdr-Os-a8J">
-                                <rect key="frame" x="184" y="486" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="178" y="657" width="58" height="30"/>
+                                <state key="normal" title="Finished"/>
+                                <connections>
+                                    <segue destination="BpV-Da-fL3" kind="unwind" unwindAction="unwindSegueWithSegue:" id="gIb-yU-FBT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="17o-M2-XCu" firstAttribute="top" secondItem="6X7-u8-7So" secondAttribute="bottom" constant="20" id="0lQ-zU-dmo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VSi-U2-lYY" secondAttribute="trailing" constant="20" id="2JS-ib-xfO"/>
+                            <constraint firstItem="WmC-J9-8av" firstAttribute="top" secondItem="zbg-0k-eG7" secondAttribute="bottom" constant="20" id="0cy-7r-x85"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zbg-0k-eG7" secondAttribute="trailing" constant="20" id="6pY-pz-1cY"/>
                             <constraint firstItem="6X7-u8-7So" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7oJ-Na-Usv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6X7-u8-7So" secondAttribute="trailing" constant="20" id="9oO-9r-1Vp"/>
                             <constraint firstItem="6X7-u8-7So" firstAttribute="top" secondItem="6V4-sw-FSE" secondAttribute="bottom" constant="28" id="Dba-2c-wI3"/>
                             <constraint firstItem="zbg-0k-eG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pr9-cz-yHq"/>
-                            <constraint firstItem="hdr-Os-a8J" firstAttribute="top" secondItem="VSi-U2-lYY" secondAttribute="bottom" constant="20" id="V02-ZB-Hld"/>
                             <constraint firstItem="6V4-sw-FSE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="XGB-yd-gUZ"/>
+                            <constraint firstItem="17o-M2-XCu" firstAttribute="top" secondItem="WmC-J9-8av" secondAttribute="bottom" constant="8" id="a9b-T2-mAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6V4-sw-FSE" secondAttribute="trailing" constant="20" id="afz-aG-YzZ"/>
-                            <constraint firstItem="hdr-Os-a8J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fZV-dE-XTa"/>
-                            <constraint firstItem="VSi-U2-lYY" firstAttribute="top" secondItem="zbg-0k-eG7" secondAttribute="bottom" constant="20" id="gLW-XW-53e"/>
-                            <constraint firstItem="VSi-U2-lYY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jnX-dS-Gwj"/>
+                            <constraint firstItem="WmC-J9-8av" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bvF-sq-8Rv"/>
+                            <constraint firstItem="WmC-J9-8av" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fSD-S2-eVv"/>
                             <constraint firstItem="17o-M2-XCu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lnL-As-vm1"/>
                             <constraint firstItem="zbg-0k-eG7" firstAttribute="top" secondItem="6X7-u8-7So" secondAttribute="bottom" constant="80" id="mNc-2o-cgL"/>
                             <constraint firstItem="6V4-sw-FSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wuT-qX-aUI"/>
@@ -69,18 +64,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="AL5-B9-I3f"/>
                     <connections>
-                        <outlet property="birthdayText" destination="VSi-U2-lYY" id="HXS-vZ-OQA"/>
                         <outlet property="nameText" destination="6X7-u8-7So" id="ouf-bo-sjr"/>
+                        <outlet property="signPicker" destination="WmC-J9-8av" id="3QC-wz-uOE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="BpV-Da-fL3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3492.753623188406" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="hPu-RV-YeW">
             <objects>
-                <viewController id="t2B-7A-8rL" sceneMemberID="viewController">
+                <viewController id="t2B-7A-8rL" customClass="DetailViewController" customModule="Pursuit_Core_iOS_UserDefaults_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n7w-S0-38E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +123,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailText" destination="fk7-W4-10r" id="MKB-5Z-ZSQ"/>
+                        <outlet property="intensity" destination="TXN-SG-ZXm" id="Kbn-DL-T1d"/>
+                        <outlet property="moodLabel" destination="heO-mb-CHD" id="baR-BH-7zD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DR-Qa-6UZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
