@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var signLabel: UILabel!
+    
     @IBOutlet weak var detailText: UITextView!
     
     @IBOutlet weak var moodLabel: UILabel!
@@ -25,7 +27,11 @@ class DetailViewController: UIViewController {
         }
     }
     
-    var currentName = ""
+    var currentName = "" {
+        didSet{
+            UserPreference.shared.updateName(for: currentName)
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -38,6 +44,10 @@ class DetailViewController: UIViewController {
         
         if let sign = UserPreference.shared.getZodiac() {
             chosenSign = sign
+        }
+        
+        if let username = UserPreference.shared.getName() {
+            currentName = username
         }
         
     }
@@ -53,8 +63,10 @@ class DetailViewController: UIViewController {
                 self?.zodiac = zodiacData
                 DispatchQueue.main.async {
                     self?.detailText.text = self?.zodiac?.horoscope
-                    self?.moodLabel.text = self?.zodiac?.meta.mood
+                    self?.moodLabel.text = self?.zodiac?.meta.mood.capitalized
                     self?.intensity.text = self?.zodiac?.meta.intensity
+                    self?.signLabel.text = self?.zodiac?.sunsign
+                    self?.navigationItem.title = "\(self?.currentName.capitalized ?? "Sign:")'s Horoscope"
                 }
             }
         }
@@ -66,6 +78,5 @@ class DetailViewController: UIViewController {
         }
         chosenSign = zodiacVC.selectedSign
         currentName = zodiacVC.currentName
-        
     }
 }

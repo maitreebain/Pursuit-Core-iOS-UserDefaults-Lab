@@ -21,6 +21,7 @@ class ZodiacViewController: UIViewController {
     var currentName = "" {
         didSet{
             nameText.text = currentName
+            UserPreference.shared.updateName(for: currentName)
         }
     }
     
