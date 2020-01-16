@@ -205,7 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="astro" width="699" height="450"/>
+        <image name="astro" width="728" height="546"/>
         <image name="mysticSign" width="800" height="800"/>
     </resources>
 </document>
